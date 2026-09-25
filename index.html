@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julien Zheng — CV</title>
+
+  <!-- Google Fonts (police) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Checkbox pour le mode Spider-Man -->
+  <input type="checkbox" id="spider-mode" class="spider-toggle">
+
+  <!-- ==================== HEADER NORMAL ==================== -->
+  <header class="site-header header-normal">
+    <div class="container header-inner">
+      <a href="#hero" class="logo">ACCUEIL</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu">
+      <label for="menu-toggle" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#sport">Sport</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HEADER SPIDER ==================== -->
+  <header class="site-header header-spider">
+    <div class="container header-inner">
+      <a href="#hero-spider" class="logo">🕷️ SPIDER</a>
+
+      <input type="checkbox" id="menu-toggle-spider" class="menu-toggle" aria-label="Ouvrir le menu">
+      <label for="menu-toggle-spider" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#apropos-spider">À propos</a></li>
+          <li><a href="#parcours-spider">Parcours</a></li>
+          <li><a href="#skills-spider">Skills</a></li>
+          <li><a href="#sport-spider">Sport</a></li>
+          <li><a href="#contact-spider" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== CV NORMAL ==================== -->
+  <main class="cv-normal">
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-photo">
+          <img src="assets/img/profil.jpg" alt="Photo de profil de Julien Zheng">
+        </div>
+        <h1 class="hero-name">ZHENG Julien</h1>
+        <p class="hero-title">Étudiant NEOMA</p>
+        <p class="hero-tagline">Calme · Lucide · Intègre</p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Me contacter</a>
+          <a href="#parcours" class="btn btn-ghost">Découvrir mon parcours</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section">
+      <div class="container">
+        <h2 class="section-title">À propos</h2>
+
+        <div class="cards-grid">
+          <article class="card card-lift">
+            <div class="card-icon">📍</div>
+            <h3>Origine</h3>
+            <p>Chinois né en France, deux cultures totalement différentes. Je suis trop français pour être chinois et trop chinois pour être français donc je suis ..... <br><br>
+              <label for="spider-mode" class="spider-trigger">SPIDER MAN !</label>
+            </p>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">🗣</div>
+            <h3>Langues</h3>
+            <ul class="lang-list">
+              <li>
+                <span class="lang-label">Français</span>
+                <span class="bar"><span class="bar-fill" style="--target:100%"></span></span>
+              </li>
+              <li>
+                <span class="lang-label">Anglais</span>
+                <span class="bar"><span class="bar-fill" style="--target:80%"></span></span>
+              </li>
+              <li>
+                <span class="lang-label">Chinois</span>
+                <span class="bar"><span class="bar-fill" style="--target:90%"></span></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">📏</div>
+            <h3>Taille</h3>
+            <p>1m82, oui je suis plutôt grand pour un chinois mais en même temps je suis né en France (pour rappel).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section id="parcours" class="section">
+      <div class="container">
+        <h2 class="section-title">Parcours</h2>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <h3>NEOMA, 2024-2025</h3>
+            <p>Programme TEMA, année 1.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Stage chez Bahy, avr.2025-juil.2025</h3>
+            <p>Première expérience professionnelle.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Tiktok, août.2025-novembre.2025</h3>
+            <p>J'ai adoré bannir les utilisateurs tiktok.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Voyages, 2026</h3>
+            <p>
+              Je suis resté en Europe et ai visité tous les alentours de
+              <label for="galerie-lisbonne" class="ville-link">Lisbonne</label>
+              jusqu'à aller en Chine dans les villes de
+              <label for="galerie-wenzhou" class="ville-link">Wenzhou</label>
+              puis
+              <label for="galerie-chongqing" class="ville-link">Chongqing</label>
+              et enfin
+              <label for="galerie-shanghai" class="ville-link">Shanghai</label>.
+            </p>
+
+            <input type="checkbox" id="galerie-lisbonne" class="galerie-toggle">
+            <div class="galerie">
+              <img src="assets/img/voyages/lisbonne1.jpeg" alt="Vue de Lisbonne 1">
+              <img src="assets/img/voyages/lisbonne2.jpeg" alt="Vue de Lisbonne 2">
+            </div>
+
+            <input type="checkbox" id="galerie-wenzhou" class="galerie-toggle">
+            <div class="galerie">
+              <img src="assets/img/voyages/wenzhou.jpeg" alt="Vue de Wenzhou 1">
+              <img src="assets/img/voyages/wenzhou2.jpeg" alt="Vue de Wenzhou 2">
+            </div>
+
+            <input type="checkbox" id="galerie-chongqing" class="galerie-toggle">
+            <div class="galerie">
+              <img src="assets/img/voyages/ch1.jpeg" alt="Vue de Chongqing 1">
+              <img src="assets/img/voyages/ch2.jpeg" alt="Vue de Chongqing 2">
+            </div>
+
+            <input type="checkbox" id="galerie-shanghai" class="galerie-toggle">
+            <div class="galerie">
+              <img src="assets/img/voyages/shanghai.jpeg" alt="Vue de Shanghai 1">
+              <img src="assets/img/voyages/shanghai1.jpeg" alt="Vue de Shanghai 2">
+            </div>
+          </li>
+          <li class="timeline-item">
+            <h3>Epitech, sep.2026-maintenant</h3>
+            <p>Semestre d'immersion avec les pré-Msc.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="cards-grid">
+          <article class="card card-lift">
+            <div class="card-icon">📊</div>
+            <h3>Analyse de données</h3>
+            <span class="bar"><span class="bar-fill" style="--target:80%"></span></span>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">📋</div>
+            <h3>Analyse des exigences</h3>
+            <span class="bar"><span class="bar-fill" style="--target:80%"></span></span>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">📈</div>
+            <h3>Analyse de marchés</h3>
+            <span class="bar"><span class="bar-fill" style="--target:80%"></span></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPORT -->
+    <section id="sport" class="section section-sport">
+      <div class="container">
+        <h2 class="section-title">Performance sportive</h2>
+        <p class="section-sub">Entraînement de calisthenics</p>
+
+        <div class="cards-grid">
+          <article class="card card-lift card-sport">
+            <div class="card-icon">💪</div>
+            <p class="big-number">50</p>
+            <h3>Push-up</h3>
+            <span class="bar bar-green"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+
+          <article class="card card-lift card-sport">
+            <div class="card-icon">🏋️</div>
+            <p class="big-number">15</p>
+            <h3>Pull-up</h3>
+            <span class="bar bar-green"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+
+          <article class="card card-lift card-sport">
+            <div class="card-icon">🤸</div>
+            <p class="big-number">5</p>
+            <h3>Muscle-up</h3>
+            <span class="bar bar-green"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+        </div>
+
+        <div class="goal-badge">
+          🎯 Road to Handstand
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Une question ? Une opportunité ? Écris-moi.</p>
+
+        <form class="contact-form" action="https://formspree.io/f/myezpqno" method="POST">
+          <div class="form-row">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/julienzheng06/" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.4c0-1.53-.03-3.5-2.13-3.5-2.13 0-2.46 1.66-2.46 3.38V23H8V8z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/jul1en.z" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm7.84-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== CV SPIDER-MAN ==================== -->
+  <div class="cv-spider">
+
+    <!-- HERO SPIDER -->
+    <section id="hero-spider" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-photo">
+          <img src="assets/img/spiderman.jpg" alt="Photo de Spider-Man">
+        </div>
+        <h1 class="hero-name">SPIDER MAN</h1>
+        <p class="hero-title">Sauveur de New York</p>
+        <p class="hero-tagline">Amical · Acrobatique · Affamé</p>
+      </div>
+    </section>
+
+    <!-- À PROPOS SPIDER -->
+    <section id="apropos-spider" class="section">
+      <div class="container">
+        <h2 class="section-title">À propos</h2>
+
+        <div class="cards-grid">
+          <article class="card card-lift">
+            <div class="card-icon">🕷️</div>
+            <h3>Origine</h3>
+            <p>La nuit je sauve la ville et surtout je sors avec des blondes aux yeux bleus. La journée je suis ... <br><br>
+              <label for="spider-mode" class="spider-trigger">ZHENG Julien</label>
+            </p>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">🕸️</div>
+            <h3>Langues</h3>
+            <ul class="lang-list">
+              <li>
+                <span class="lang-label">Toile d'araignée</span>
+                <span class="bar"><span class="bar-fill" style="--target:100%"></span></span>
+              </li>
+              <li>
+                <span class="lang-label">Sens d'araignée</span>
+                <span class="bar"><span class="bar-fill" style="--target:100%"></span></span>
+              </li>
+              <li>
+                <span class="lang-label">Humour de super-héros</span>
+                <span class="bar"><span class="bar-fill" style="--target:85%"></span></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">🍔</div>
+            <h3>Carburant</h3>
+            <p>Hot-dogs. Beaucoup de hot-dogs. Parfois avec Spider-Cochon, mon meilleur ami porcin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARCOURS SPIDER -->
+    <section id="parcours-spider" class="section">
+      <div class="container">
+        <h2 class="section-title">Parcours</h2>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <h3>Araignée radioactive, 2002</h3>
+            <p>Morsure. Grand pouvoir. Grande responsabilité.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Le Bouffon Vert, 2003</h3>
+            <p>Premier grand vilain vaincu.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Le Docteur Octopus, 2004</h3>
+            <p>Un petit génie à 8 bras.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Spider-Verse, 2018</h3>
+            <p>Rencontre avec Spider-Cochon et les autres Spider-Man.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Sauveur de New York, maintenant</h3>
+            <p>Toujours en service. Toujours affamé.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SKILLS SPIDER -->
+    <section id="skills-spider" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="cards-grid">
+          <article class="card card-lift">
+            <div class="card-icon">🕸️</div>
+            <h3>Lancer de toile</h3>
+            <span class="bar"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">🧗</div>
+            <h3>Escalade de buildings</h3>
+            <span class="bar"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+
+          <article class="card card-lift">
+            <div class="card-icon">⚡</div>
+            <h3>Sens d'araignée</h3>
+            <span class="bar"><span class="bar-fill" style="--target:95%"></span></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPORT SPIDER -->
+    <section id="sport-spider" class="section section-sport">
+      <div class="container">
+        <h2 class="section-title">Performance sportive</h2>
+        <p class="section-sub">Entraînement de super-héros</p>
+
+        <div class="cards-grid">
+          <article class="card card-lift card-sport">
+            <div class="card-icon">🕷️</div>
+            <p class="big-number">100</p>
+            <h3>Mètres en toile</h3>
+            <span class="bar bar-green"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+
+          <article class="card card-lift card-sport">
+            <div class="card-icon">🏙️</div>
+            <p class="big-number">57</p>
+            <h3>Buildings sautés</h3>
+            <span class="bar bar-green"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+
+          <article class="card card-lift card-sport">
+            <div class="card-icon">🍔</div>
+            <p class="big-number">12</p>
+            <h3>Hot-dogs avalés</h3>
+            <span class="bar bar-green"><span class="bar-fill" style="--target:100%"></span></span>
+          </article>
+        </div>
+
+        <div class="goal-badge">
+          🎯 Road to Spider-Verse
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SPIDER -->
+    <section id="contact-spider" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Un vilain à signaler ? Une blonde à me présenter ?</p>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/julienzheng06/" target="_blank" rel="noopener noreferrer" class="social-link">
+            🕸️ Signaux de toile
+          </a>
+          <a href="https://www.instagram.com/jul1en.z" target="_blank" rel="noopener noreferrer" class="social-link">
+            🕷️ Spider-Cochon
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toiles décoratives -->
+    <span class="toile toile-1" aria-hidden="true">🕸️</span>
+    <span class="toile toile-2" aria-hidden="true">🕸️</span>
+    <span class="toile toile-3" aria-hidden="true">🕷️</span>
+
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Julien Zheng · Fait avec HTML &amp; CSS</p>
+    </div>
+  </footer>
+
+</body>
+</html>O
+

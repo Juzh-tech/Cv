@@ -1,0 +1,962 @@
+/* =========================================================
+   1. VARIABLES & RESET
+   ========================================================= */
+:root {
+  --bg:        #0f0f14;
+  --surface:   #1a1a22;
+  --surface-2: #23232e;
+  --text:      #e8e8ec;
+  --muted:     #8a8a99;
+  --accent:    #ff5c39;
+  --accent-2:  #4ade80;
+  --border:    #2a2a36;
+
+  --radius:    14px;
+  --radius-sm: 8px;
+  --shadow:    0 10px 30px rgba(0, 0, 0, 0.4);
+
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   2. HEADER
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 15, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.logo:hover {
+  color: var(--accent);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.main-nav a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: color var(--transition);
+  position: relative;
+}
+
+.main-nav a:hover {
+  color: var(--text);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.nav-cta:hover {
+  background: #ff7355;
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+/* --- Menu burger (mobile) --- */
+.menu-toggle { display: none; }
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* =========================================================
+   3. HERO
+   ========================================================= */
+.hero {
+  padding: 5rem 0 4rem;
+  text-align: center;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 40px rgba(255, 92, 57, 0.35);
+  animation: fadeUp 1s ease-out both;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-name {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  animation: fadeUp 1s ease-out 0.2s both;
+}
+
+.hero-title {
+  font-size: 1.1rem;
+  color: var(--muted);
+  animation: fadeUp 1s ease-out 0.4s both;
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: fadeUp 1s ease-out 0.55s both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 1s ease-out 0.7s both;
+}
+
+/* =========================================================
+   4. BOUTONS
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(255, 92, 57, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: #ff7355;
+  box-shadow: 0 10px 28px rgba(255, 92, 57, 0.45);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* =========================================================
+   5. SECTIONS
+   ========================================================= */
+.section {
+  padding: 4.5rem 0;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+/* =========================================================
+   6. CARTES
+   ========================================================= */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.card-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.big-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  margin: 0.25rem 0;
+}
+
+/* =========================================================
+   7. BARRES DE PROGRESSION
+   ========================================================= */
+.bar {
+  display: block;
+  width: 100%;
+  height: 8px;
+  background: var(--surface-2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 4px;
+  animation: fillBar 1.4s ease-out 0.4s forwards;
+}
+
+.bar-green .bar-fill {
+  background: var(--accent-2);
+}
+
+.lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.lang-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.lang-label {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* =========================================================
+   8. TIMELINE
+   ========================================================= */
+.timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 2rem;
+  border-left: 2px solid var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.6rem;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 92, 57, 0.15);
+  transition: transform var(--transition);
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.35);
+}
+
+.timeline-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   9. SECTION SPORT
+   ========================================================= */
+.section-sport .card-sport {
+  text-align: center;
+}
+
+.section-sport .card-icon {
+  font-size: 2rem;
+}
+
+.goal-badge {
+  display: block;
+  max-width: max-content;
+  margin: 2.5rem auto 0;
+  padding: 0.9rem 1.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* =========================================================
+   10. FORMULAIRE CONTACT
+   ========================================================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-row label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form-row input,
+.form-row textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 92, 57, 0.15);
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
+/* =========================================================
+   11. RÉSEAUX SOCIAUX
+   ========================================================= */
+.socials {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: transform var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+.site-footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   13. ANIMATIONS
+   ========================================================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to   { width: var(--target, 100%); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(255, 92, 57, 0.4);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 0 0 10px rgba(255, 92, 57, 0);
+  }
+}
+
+/* =========================================================
+   14. GALERIES PHOTOS (voyages)
+   ========================================================= */
+.galerie-toggle {
+  display: none;
+}
+
+.ville-link {
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.ville-link:hover {
+  color: #ff7355;
+  text-decoration-style: solid;
+}
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.3s ease;
+}
+
+.galerie-toggle:checked + .galerie {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.galerie img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.galerie img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+/* =========================================================
+   15. MODE SPIDER-MAN
+   ========================================================= */
+
+/* La checkbox cachée */
+.spider-toggle {
+  display: none;
+}
+
+/* Le texte cliquable */
+.spider-trigger {
+  color: var(--accent);
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 4px;
+  transition: color var(--transition);
+}
+
+.spider-trigger:hover {
+  color: #ff2233;
+}
+
+/* Cache le CV Spider-Man par défaut */
+.cv-spider {
+  display: none;
+}
+
+/* Cache le header Spider par défaut */
+.header-spider {
+  display: none;
+}
+
+/* Toiles décoratives cachées par défaut */
+.toile {
+  display: none;
+}
+
+/* =========================================================
+   QUAND LE MODE SPIDER-MAN EST ACTIVÉ
+   ========================================================= */
+
+/* Cache le CV normal */
+#spider-mode:checked ~ .cv-normal {
+  display: none;
+}
+
+/* Cache le header normal */
+#spider-mode:checked ~ .header-normal {
+  display: none;
+}
+
+/* Affiche le header Spider */
+#spider-mode:checked ~ .header-spider {
+  display: block;
+  background: rgba(26, 5, 5, 0.9);
+  border-bottom: 1px solid #4a1515;
+  box-shadow: 0 4px 30px rgba(255, 34, 51, 0.3);
+}
+
+/* Affiche le CV Spider-Man */
+#spider-mode:checked ~ .cv-spider {
+  display: block;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 34, 51, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(68, 119, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #1a0505 0%, #2a0808 50%, #0a0a2a 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Fond "cave" avec texture */
+#spider-mode:checked ~ .cv-spider::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(255, 34, 51, 0.03) 50px, rgba(255, 34, 51, 0.03) 52px),
+    repeating-linear-gradient(-45deg, transparent, transparent 50px, rgba(68, 119, 255, 0.03) 50px, rgba(68, 119, 255, 0.03) 52px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Change les variables de couleur du site entier */
+#spider-mode:checked ~ * {
+  --bg:        #1a0505;
+  --surface:   #2a0a0a;
+  --surface-2: #3a1010;
+  --text:      #ffe8e8;
+  --muted:     #cc9999;
+  --accent:    #ff2233;
+  --accent-2:  #4477ff;
+  --border:    #4a1515;
+}
+
+/* Photo hero Spider-Man : effet toile */
+#spider-mode:checked ~ .cv-spider .hero-photo {
+  border-color: #ff2233;
+  box-shadow:
+    0 0 60px rgba(255, 34, 51, 0.8),
+    0 0 120px rgba(68, 119, 255, 0.4),
+    inset 0 0 40px rgba(0, 0, 0, 0.5);
+  animation: spiderGlow 2s ease-in-out infinite;
+}
+
+/* Nom Spider-Man effet comics */
+#spider-mode:checked ~ .cv-spider .hero-name {
+  color: #ff2233;
+  text-shadow:
+    3px 3px 0 #000,
+    5px 5px 0 #4477ff;
+  letter-spacing: 4px;
+  animation: spiderGlow 2s ease-in-out infinite;
+}
+
+/* Tagline Spider-Man */
+#spider-mode:checked ~ .cv-spider .hero-tagline {
+  color: #4477ff;
+  text-shadow: 1px 1px 0 #ff2233;
+}
+
+/* Titres de section façon comics */
+#spider-mode:checked ~ .cv-spider .section-title {
+  color: #ff2233;
+  text-shadow: 2px 2px 0 #000;
+}
+
+#spider-mode:checked ~ .cv-spider .section-title::after {
+  background: linear-gradient(90deg, #ff2233, #4477ff);
+  width: 80px;
+  height: 5px;
+}
+
+/* Cartes avec bordure rouge */
+#spider-mode:checked ~ .cv-spider .card {
+  background: linear-gradient(135deg, #2a0a0a 0%, #1a0505 100%);
+  border-color: #4a1515;
+  box-shadow: inset 0 0 40px rgba(255, 34, 51, 0.1);
+}
+
+#spider-mode:checked ~ .cv-spider .card-lift:hover {
+  border-color: #ff2233;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(255, 34, 51, 0.4);
+}
+
+/* Timeline Spider-Man */
+#spider-mode:checked ~ .cv-spider .timeline {
+  border-left-color: #4a1515;
+}
+
+#spider-mode:checked ~ .cv-spider .timeline-item::before {
+  background: #ff2233;
+  box-shadow: 0 0 0 4px rgba(255, 34, 51, 0.3);
+}
+
+/* Badge Spider-Man */
+#spider-mode:checked ~ .cv-spider .goal-badge {
+  background: #2a0a0a;
+  border-color: #ff2233;
+  color: #ffe8e8;
+  box-shadow: 0 0 30px rgba(255, 34, 51, 0.5);
+}
+
+/* Liens sociaux Spider-Man */
+#spider-mode:checked ~ .cv-spider .social-link {
+  background: #2a0a0a;
+  border-color: #ff2233;
+  color: #ffe8e8;
+}
+
+#spider-mode:checked ~ .cv-spider .social-link:hover {
+  background: #3a1010;
+  box-shadow: 0 0 30px rgba(255, 34, 51, 0.5);
+}
+
+/* Affiche les toiles décoratives */
+#spider-mode:checked ~ .cv-spider .toile {
+  display: block;
+  position: fixed;
+  font-size: 5rem;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+  animation: spiderCrawl 8s ease-in-out infinite;
+}
+
+#spider-mode:checked ~ .cv-spider .toile-1 {
+  top: 8%;
+  left: 3%;
+  animation-delay: 0s;
+}
+
+#spider-mode:checked ~ .cv-spider .toile-2 {
+  top: 45%;
+  right: 3%;
+  animation-delay: 2s;
+  font-size: 4rem;
+}
+
+#spider-mode:checked ~ .cv-spider .toile-3 {
+  bottom: 10%;
+  left: 5%;
+  animation-delay: 4s;
+  font-size: 3rem;
+}
+
+/* Footer Spider-Man */
+#spider-mode:checked ~ .site-footer {
+  background: #1a0505;
+  border-top-color: #4a1515;
+  color: #cc9999;
+}
+
+/* Menu burger mobile : gère les 2 checkboxes */
+#menu-toggle-spider:checked ~ .main-nav {
+  max-height: 400px;
+}
+
+#menu-toggle-spider:checked ~ .burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+#menu-toggle-spider:checked ~ .burger span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle-spider:checked ~ .burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   ANIMATIONS SPIDER-MAN
+   ========================================================= */
+@keyframes spiderGlow {
+  0%, 100% {
+    text-shadow: 3px 3px 0 #000, 5px 5px 0 #4477ff;
+    filter: brightness(1);
+  }
+  50% {
+    text-shadow: 3px 3px 0 #000, 5px 5px 0 #4477ff, 0 0 30px #ff2233;
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes spiderCrawl {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25%      { transform: translate(15px, -10px) rotate(10deg); }
+  50%      { transform: translate(-10px, 15px) rotate(-10deg); }
+  75%      { transform: translate(10px, 10px) rotate(5deg); }
+}
+
+/* =========================================================
+   16. RESPONSIVE — TABLETTE
+   ========================================================= */
+@media (max-width: 900px) {
+  .main-nav ul {
+    gap: 1.25rem;
+  }
+}
+
+/* =========================================================
+   17. RESPONSIVE — MOBILE
+   ========================================================= */
+@media (max-width: 700px) {
+
+  .burger {
+    display: flex;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 0;
+  }
+
+  .main-nav li {
+    padding: 0;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .nav-cta {
+    background: transparent;
+    color: var(--accent) !important;
+    font-weight: 600;
+  }
+
+  .menu-toggle:checked ~ .main-nav {
+    max-height: 400px;
+  }
+
+  .menu-toggle:checked ~ .burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle:checked ~ .burger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked ~ .burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .hero-photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .contact-form button {
+    align-self: stretch;
+  }
+}
+/* =========================================================
+   18. LIEN AUTOUR DU SPIDER-TRIGGER
+   ========================================================= */
+a:has(.spider-trigger) {
+  display: inline;
+  color: inherit;
+  text-decoration: none;
+}
